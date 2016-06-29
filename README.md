@@ -8,7 +8,7 @@ npm i -S storm-textarea
 ```
 ```
 var TextArea = require('storm-textarea');
-TextArea.init('.js-texarea');
+TextArea.init('.js-textarea');
 ```
 
 ###Options
