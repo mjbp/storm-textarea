@@ -1,6 +1,6 @@
 #Storm Textarea
 
-Auto resizes textareas to fit value content
+Auto resize textareas to fit value
 
 ##API
 ```
