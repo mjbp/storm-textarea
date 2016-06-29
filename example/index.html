@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Storm Texarea</title>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="cleartype" content="on">
+        <link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <style>
+            * {
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family: 'Roboto', sans-serif;
+            }
+            form {
+                width:90%;
+                max-width:500px;
+                margin:40px auto;
+            }
+            label {
+                display:block;
+                margin-bottom: 1rem;
+            }
+            textarea {
+                font-size:1rem;
+                width: 100%;
+                background:#fff;
+                border: 1px solid grey;
+                min-height:50px;
+                resize: none
+            }
+        </style>
+    </head>
+    <body>
+        <form action='#'>
+            <label for="textarea">Enter a long string</label>
+            <textarea id="textarea" name="textarea" class="js-textarea"></textarea>
+        </form>
+        <script src="js/app.js"></script>
+    </body>
+</html>
