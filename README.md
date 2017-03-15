@@ -26,7 +26,7 @@ aynchronous browser loading (use the .standalone version in the /dist folder)
 ```
 import Load from 'storm-load';
 
-Load('/content/js/async/storm-texarea.standalone.js')
+Load('/content/js/async/storm-textarea.standalone.js')
     .then(() => {
         StormTextarea.init('textarea');
 ```

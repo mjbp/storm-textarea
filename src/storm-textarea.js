@@ -15,7 +15,7 @@ const defaults = {
 			this.settings.events.forEach(evt => this.DOMElement.addEventListener(evt, this.resize.bind(this)));
 			return this;
 		},
-		resize() {;
+		resize() {
 			this.DOMElement.style.height = 'auto';
 			this.DOMElement.style.height =  this.DOMElement.scrollHeight + this.settings.paddingBottom + 'px';
 		}

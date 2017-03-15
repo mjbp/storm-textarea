@@ -1,6 +1,6 @@
 /**
  * @name storm-textarea: Auto-resize textareas to fit value size
- * @version 0.1.1: Wed, 11 Jan 2017 17:54:10 GMT
+ * @version 0.1.1: Wed, 15 Mar 2017 13:08:58 GMT
  * @author stormid
  * @license MIT
  */
@@ -38,7 +38,6 @@ var defaults = {
 		return this;
 	},
 	resize: function resize() {
-		;
 		this.DOMElement.style.height = 'auto';
 		this.DOMElement.style.height = this.DOMElement.scrollHeight + this.settings.paddingBottom + 'px';
 	}
