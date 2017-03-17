@@ -1,4 +1,4 @@
-#Storm Textarea
+# Storm Textarea
 
 [![Build Status](https://travis-ci.org/mjbp/storm-textarea.svg?branch=master)](https://travis-ci.org/mjbp/storm-textarea)
 [![codecov.io](http://codecov.io/github/mjbp/storm-textarea/coverage.svg?branch=master)](http://codecov.io/github/mjbp/storm-textarea?branch=master)
@@ -6,10 +6,10 @@
 
 Auto resize textareas to fit value
 
-##Example
+## Example
 [https://mjbp.github.io/storm-textarea](https://mjbp.github.io/storm-textarea)
 
-##Usage
+## Usage
 JS
 ```
 npm install storm-textarea
@@ -31,7 +31,7 @@ Load('/content/js/async/storm-textarea.standalone.js')
         StormTextarea.init('textarea');
 ```
 
-###Options
+### Options
 ```
 {
     paddingBottom: 16 //px added to bottom of textarea above the scrollHeight of the textContent
@@ -52,19 +52,19 @@ Textarea.init('textarea', {
 })
 ```
 
-##Tests
+## Tests
 ```
 npm run test
 ```
 
-##Browser support
+## Browser support
 This is module has both es6 and es5 distributions. The es6 version should be used in a workflow that transpiles.
 
 The es5 version depends unpon Object.assign, element.classList, and Promises so all evergreen browsers are supported out of the box, ie9+ is supported with polyfills. ie8+ will work with even more polyfils for Array functions and eventListeners.
 
-##Dependencies
+## Dependencies
 None
 
-##License
+## License
 MIT
 
