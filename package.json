@@ -1,6 +1,6 @@
 {
   "name": "storm-textarea",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Auto resize textareas to fit value",
   "author": "stormid",
   "license": "MIT",
