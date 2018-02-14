@@ -70,7 +70,7 @@ gulp.task('js:es5', function() {
     return gulp.src('src/*.js')
         .pipe(plumber({errorHandler: onError}))
         .pipe(babel({
-			presets: ['es2015']
+			presets: ['env']
 		}))
         .pipe(wrap({
             namespace: componentName(),
@@ -100,7 +100,7 @@ gulp.task('example:import', function(){
             entries: './example/src/app.js',
             debug: true
         })
-        .transform(babelify, {presets: ['es2015']})
+        .transform(babelify, {presets: ['env']})
         .bundle()
         .pipe(source('app.js'))
         .pipe(buffer())
