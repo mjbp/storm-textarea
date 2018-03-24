@@ -4,13 +4,13 @@ const defaults = {
 	]
 };
 
-function resize({target}) {
+function update({target}) {
 	target.style.height = 'auto';
 	target.style.height =  target.scrollHeight + 'px';
 }
 
 function listen (event) {
-	this.addEventListener(event, resize);
+	this.addEventListener(event, update);
 }
 
 export default function (elements, settings) {
@@ -25,5 +25,6 @@ export default function (elements, settings) {
 	const currentSettings = Object.assign({}, defaults, settings);	
 	elements.forEach(element => {
 		currentSettings.events.forEach(listen, element);
+		update({target: element});
 	});
 }
