@@ -22,7 +22,7 @@ export default function (elements, settings) {
 		return;
 	}
 
-	const currentSettings = Object.assign({}, defaults, settings);	
+	const events = settings && settings.events || defaults.events;	
 	elements.forEach(element => {
 		currentSettings.events.forEach(listen, element);
 		update({target: element});
