@@ -1,6 +1,6 @@
 /**
- * @name storm-textarea: Auto-resize textareas to fit value size
- * @version 0.1.1: Wed, 15 Mar 2017 13:08:58 GMT
+ * @name storm-textarea: Auto resize textareas to fit value
+ * @version 1.1.0: Sun, 25 Mar 2018 18:40:41 GMT
  * @author stormid
  * @license MIT
  */
@@ -24,37 +24,70 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var defaults = {
-	paddingBottom: 16,
-	events: ['focus', 'cut', 'drop', 'keydown', 'resize', 'change']
-},
-    StormTextarea = {
-	init: function init() {
-		var _this = this;
+exports.default = function (elements, settings) {
+	if (typeof elements === 'string') {
+		elements = document.querySelectorAll(elements);
+	}
 
-		this.settings.events.forEach(function (evt) {
-			return _this.DOMElement.addEventListener(evt, _this.resize.bind(_this));
-		});
-		return this;
-	},
-	resize: function resize() {
-		this.DOMElement.style.height = 'auto';
-		this.DOMElement.style.height = this.DOMElement.scrollHeight + this.settings.paddingBottom + 'px';
+	var events = settings && settings.events || defaults.events;
+	var _iteratorNormalCompletion = true;
+	var _didIteratorError = false;
+	var _iteratorError = undefined;
+
+	try {
+		for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+			var element = _step.value;
+			var _iteratorNormalCompletion2 = true;
+			var _didIteratorError2 = false;
+			var _iteratorError2 = undefined;
+
+			try {
+				for (var _iterator2 = events[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+					var event = _step2.value;
+
+					element.addEventListener(event, update);
+				}
+			} catch (err) {
+				_didIteratorError2 = true;
+				_iteratorError2 = err;
+			} finally {
+				try {
+					if (!_iteratorNormalCompletion2 && _iterator2.return) {
+						_iterator2.return();
+					}
+				} finally {
+					if (_didIteratorError2) {
+						throw _iteratorError2;
+					}
+				}
+			}
+
+			update({ target: element });
+		}
+	} catch (err) {
+		_didIteratorError = true;
+		_iteratorError = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion && _iterator.return) {
+				_iterator.return();
+			}
+		} finally {
+			if (_didIteratorError) {
+				throw _iteratorError;
+			}
+		}
 	}
 };
 
-var init = function init(sel, opts) {
-	var els = [].slice.call(document.querySelectorAll(sel));
-
-	if (els.length === 0) throw new Error('Textarea cannot be initialised, no augmentable elements found');
-
-	return els.map(function (el) {
-		return Object.assign(Object.create(StormTextarea), {
-			DOMElement: el,
-			settings: Object.assign({}, defaults, opts)
-		}).init();
-	});
+var defaults = {
+	events: ['input']
 };
 
-exports.default = { init: init };;
+function update(_ref) {
+	var target = _ref.target;
+
+	target.style.height = 'auto';
+	target.style.height = target.scrollHeight + 'px';
+};
 }));

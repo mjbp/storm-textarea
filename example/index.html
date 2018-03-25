@@ -102,11 +102,11 @@
         <h3>JS</h3>
         <p>Either import and initialise using a named import:</p>
         <pre><code class="language-js">import Tabs from 'storm-textarea';
-Textarea.init('.js-textarea');</code></pre>
+Textarea('.js-textarea');</code></pre>
         <p>Or async using storm-load.js, add the .standalone file to your project, then initialise using the global name:</p>
         <pre><code class="language-js">Load('/content/js/async/storm-textarea.standalone.js')
 .then(() => {
-    StormTextarea.init('.js-textarea');
+    StormTextarea('.js-textarea');
 });</code></pre>
     </div>
     <script src="./js/app.js"></script>
