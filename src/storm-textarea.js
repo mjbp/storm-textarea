@@ -14,14 +14,10 @@ export default function (elements, settings) {
 		elements = document.querySelectorAll(elements);
 	}
 
-	if(elements.length === 0) {
-		return;
-	}
-
 	const events = settings && settings.events || defaults.events;
-	for (let i = 0; i < elements.length; i++) {
-		for (let l = 0; l < events.length; i++) {
-			elements[i].addEventListener(events[l], update);
+	for (const element of elements) {
+		for (const event of events) {
+			element.addEventListener(event, update);
 		}
 		update({target: element});
 	}
