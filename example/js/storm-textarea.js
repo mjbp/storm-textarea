@@ -1,6 +1,6 @@
 /**
  * @name storm-textarea: Auto resize textareas to fit value
- * @version 1.1.0: Sun, 25 Mar 2018 18:40:40 GMT
+ * @version 1.1.0: Sun, 27 May 2018 19:35:39 GMT
  * @author stormid
  * @license MIT
  */
@@ -15,7 +15,7 @@ function update({target}) {
 	target.style.height =  target.scrollHeight + 'px';
 }
 
-export default function (elements, settings) {
+function init (elements, settings) {
 	if (typeof elements === 'string') {
 		elements = document.querySelectorAll(elements);
 	}
@@ -28,3 +28,5 @@ export default function (elements, settings) {
 		update({target: element});
 	}
 }
+
+export default { init }

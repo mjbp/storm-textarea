@@ -9,9 +9,7 @@ document.body.innerHTML = html;
 
 
 let textareaItems = Textarea.init('.js-ta--1'),
-	textareaItems2 = Textarea.init('.js-ta--2', {
-		paddingBottom: 0
-	});
+	textareaItems2 = Textarea.init('.js-ta--2');
 
 describe('Initialisation', () => {
 
