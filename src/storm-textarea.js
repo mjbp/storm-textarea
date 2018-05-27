@@ -9,7 +9,7 @@ function update({target}) {
 	target.style.height =  target.scrollHeight + 'px';
 }
 
-function init (elements, settings) {
+export default function (elements, settings) {
 	if (typeof elements === 'string') {
 		elements = document.querySelectorAll(elements);
 	}
@@ -22,5 +22,3 @@ function init (elements, settings) {
 		update({target: element});
 	}
 }
-
-export default { init }
