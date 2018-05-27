@@ -1,6 +1,6 @@
 /**
  * @name storm-textarea: Auto resize textareas to fit value
- * @version 1.1.0: Sun, 27 May 2018 19:35:39 GMT
+ * @version 2.0.0: Sun, 27 May 2018 20:16:54 GMT
  * @author stormid
  * @license MIT
  */
@@ -23,18 +23,8 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var defaults = {
-	events: ['input']
-};
 
-function update(_ref) {
-	var target = _ref.target;
-
-	target.style.height = 'auto';
-	target.style.height = target.scrollHeight + 'px';
-}
-
-function init(elements, settings) {
+exports.default = function (elements, settings) {
 	if (typeof elements === 'string') {
 		elements = document.querySelectorAll(elements);
 	}
@@ -88,7 +78,16 @@ function init(elements, settings) {
 			}
 		}
 	}
-}
+};
 
-exports.default = { init: init };;
+var defaults = {
+	events: ['input']
+};
+
+function update(_ref) {
+	var target = _ref.target;
+
+	target.style.height = 'auto';
+	target.style.height = target.scrollHeight + 'px';
+};
 }));
